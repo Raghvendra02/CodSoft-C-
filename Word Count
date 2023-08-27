@@ -1,1 +1,20 @@
+#include<iostream>
+#include<fstream>>
+using namespace std;
+int main(){
+    ifstream fin("file.txt");//for opening the text file
+    int ourword=1;//Initial value is declared 1, because the first word won't be counted
+    char ch1;
+    fin.seekg(0,ios::beg);//For bringing the position of the file pointer to the begining of the file
 
+    while (fin)
+    {
+        fin.get(ch1);
+        if(ch1==' '||ch1=='\n')
+        ourword++;
+    }
+    cout<<"\nWords="<<ourword<<"\n";
+    fin.close();//closing the file
+
+
+}
